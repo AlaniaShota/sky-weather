@@ -3,9 +3,7 @@ import axios from "axios";
 import { MainForecast } from "./wearher.module";
 import { IconChanger } from "./IconChanger";
 import { TbTemperatureCelsius } from "react-icons/tb";
-interface WeatherForecastProps {
-  city: string;
-}
+import { WeatherForecastProps } from "../types";
 
 interface ForecastDataProps {
   list: {
@@ -18,15 +16,14 @@ interface ForecastDataProps {
       main: string;
     }[];
   }[];
+  // city: string;
+  // darkMode: boolean;
 }
 
 export const WeatherForecast: React.FC<WeatherForecastProps> = ({
   city,
   darkMode,
-}: {
-  darkMode: boolean;
-  city: [];
-}) => {
+}: WeatherForecastProps) => {
   const [forecastData, setForecastData] = useState<ForecastDataProps | null>(
     null
   );

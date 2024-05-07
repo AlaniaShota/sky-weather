@@ -95,6 +95,7 @@ function App() {
               setSearch={setSearch}
               handleSearch={handleSearch}
               darkMode={darkMode}
+              isLoading={isLoading}
             />
             {weatherData && (
               <div className="main-content">
