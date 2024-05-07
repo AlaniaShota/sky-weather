@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sky-weather {
+  width: auto;
+  /* height: 100vh; */
+  /* height: 100svh; */
+  padding-bottom: 60px ;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.dark-mode {
+  background-color: #1d1c1f;
+  color: #7b7980;
+}
+
+.light-mode {
+  background: linear-gradient(to right, #c7c7eb, #ccf2dd);
+}
+
+.sky-weather-container {
+  display: flex;
+  gap: 20px;
+  /* justify-content: space-evenly; */
+  /* align-items: flex-start; */
+  text-align: center;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  /* height: 100vh; */
+  /* height: 100svh; */
+}
+
+.loading {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-icon {
+  font-size: 3rem;
+  animation: spin 2s linear infinite;
+}
+
+p {
+  font-size: 22px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.dark-mode-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 28px;
+}
+
+.dark-mode-icon {
+  width: 100%;
+  height: 100%;
+  font-size: 38px;
+  cursor: pointer;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.moon {
+  rotate: 260deg;
+}
+
+@media (max-width: 430px) {
+  .sky-weather-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    /* height: 100svh; */
+  }
+}
