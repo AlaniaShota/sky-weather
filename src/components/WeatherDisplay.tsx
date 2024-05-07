@@ -31,20 +31,20 @@ export const WeatherDisplay = ({
 
   return (
     <MainWrapper darkMode={darkMode}>
-      <div className={darkMode ? "dark-mode container" : "container"}>
+      <div className="container">
         <div className="search-area">
           <input
-            className={darkMode ? "dark-mode input-text" : "input-text"}
+            className="input-text"
             type="text"
             placeholder="Search city..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
           <div
-            className={darkMode ? "dark-mode search-circle" : "search-circle"}
+            className="search-circle"
           >
             <AiOutlineSearch
-              className={darkMode ? "dark-mode search-icon" : "search-icon"}
+              className="search-icon"
               onClick={handleSearch}
             />
           </div>

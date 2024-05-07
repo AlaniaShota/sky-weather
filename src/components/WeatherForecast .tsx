@@ -16,8 +16,6 @@ interface ForecastDataProps {
       main: string;
     }[];
   }[];
-  // city: string;
-  // darkMode: boolean;
 }
 
 export const WeatherForecast: React.FC<WeatherForecastProps> = ({
@@ -65,14 +63,12 @@ export const WeatherForecast: React.FC<WeatherForecastProps> = ({
   return (
     <MainForecast darkMode={darkMode}>
       <ul
-        className={
-          darkMode ? "dark-mode forecast-container" : "forecast-container"
-        }
+        className="forecast-container"
       >
         {dailyForecast.map((forecast, index) => (
           <li
             key={index}
-            className={darkMode ? "dark-mode forecast-list" : "forecast-list"}
+            className= "forecast-list"
           >
             <p>
               {new Date(forecast.dt_txt).toLocaleDateString("en-US", {
