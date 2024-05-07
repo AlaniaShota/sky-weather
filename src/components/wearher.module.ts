@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-interface MainHighlightsProps {
+interface darkModeProps {
     darkMode: boolean;
 }
 
@@ -11,7 +11,7 @@ const breakpoints = {
     extraLarge: "1200px",
 };
 
-export const MainWrapper = styled.div<MainHighlightsProps>`
+export const MainWrapper = styled.div<darkModeProps>`
 /* height: 100vh; */
 /* height: 100svh; */
 display: flex;
@@ -19,7 +19,7 @@ align-items: center;
 justify-content: center;
 width: auto;
 .container {
-    background-color:#${({ darkMode }) => (darkMode ? "131214" : "fff")};
+    background-color:${({ darkMode }) => (darkMode ? "#131214" : "#fff")};
     color:${({ darkMode }) => (darkMode ? "#fff" : "rgba(0, 0, 0, 0.8)")};
     box-shadow:${({ darkMode }) => (darkMode ? "none" : "0 10px 15px rgb(0 0 0 / 20%)")};
     border-radius: 12px;
@@ -92,10 +92,10 @@ width: auto;
         font-weight: 400;
     }
 }
-
+/* 
 .dark-mode .bottom-info-area {
     background: #ffffff7d;
-}
+} */
 
 .bottom-info-area {
     display: flex;
@@ -133,7 +133,7 @@ width: auto;
 display: flex;
 align-items: center;
 justify-content: center;
-width: 90%;
+width: 80%;
 .container {
     /* background-color:#${({ darkMode }) => (darkMode ? "131214" : "fff")};
     color:${({ darkMode }) => (darkMode ? "#fff" : "rgba(0, 0, 0, 0.8)")};
@@ -205,7 +205,7 @@ width: 90%;
     }
 `
 
-export const MainForecast = styled.div<MainHighlightsProps>`
+export const MainForecast = styled.div<darkModeProps>`
 display: flex;
 align-items: center;
 justify-content: center;
@@ -289,7 +289,7 @@ width: auto;
     }
     `
 
-export const MainHighlights = styled.div<MainHighlightsProps>`
+export const MainHighlights = styled.div<darkModeProps>`
 width: auto;
 display: flex;
 justify-content: center;
