@@ -12,8 +12,6 @@ const breakpoints = {
 };
 
 export const MainWrapper = styled.div<darkModeProps>`
-/* height: 100vh; */
-/* height: 100svh; */
 display: flex;
 align-items: center;
 justify-content: center;
@@ -29,6 +27,7 @@ width: auto;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    width: 100%;
 }
 .search-area {
     margin-top: 20px;
@@ -92,7 +91,9 @@ width: auto;
         font-weight: 400;
     }
 }
-
+.humid-title{
+    font-size:36px;
+}
 .bottom-info-area {
     display: flex;
     align-items: center;
@@ -123,68 +124,52 @@ width: auto;
     font-size: 2rem;
     margin-right: 10px;
 }
-
 @media (max-width: ${breakpoints.small}) {
-display: flex;
-align-items: center;
-justify-content: center;
-width: auto;
-.container {
-    padding: 0;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.weather-area {
-    margin: 20px 0;
-
-> .icon {
-        font-size: 7rem;
-    }
-> h1 {
-        font-size: 3rem;
-    }
-
-> span {
-        margin-bottom: 5px;
-    }
-
-> h2 {
-        font-size: 1.5rem;
-    }
-}
-    }
-
-    @media (max-width: ${breakpoints.medium}){
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     width: auto;
     .container {
         padding: 0;
+        width:auto;
         justify-content: center;
         flex-direction: column;
     }
 
-    /* .weather-area {
+    .weather-area {
         margin: 20px 0;
 
-    > .icon {
-        font-size: 7rem;
-    }
-    > h1 {
-        font-size: 3rem;
-    }
+        > .icon {
+            font-size: 7rem;
+        }
+        > h1 {
+            font-size: 36px;
+        }
 
-    > span {
-        margin-bottom: 5px;
-    }
+        > span {
+            margin-bottom: 5px;
+        }
 
-    > h2 {
-        font-size: 1.5rem;
-    } */
+        > h2 {
+            font-size: 1.5rem;
+        }
+    }
+    .humid-title{
+    font-size:26px;
 }
-    
+
+.humidity-level,
+.wind {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+
+> .humid-icon {
+        font-size: 1rem;
+    }
+
+    }
+}   
 `
 
 export const MainForecast = styled.div<darkModeProps>`
@@ -230,7 +215,7 @@ width: auto;
         font-family: "Josefin Sans", sans-serif;
         text-transform: uppercase;
     }
-    @media screen and (max-width: ${breakpoints.small}){
+    @media (max-width: ${breakpoints.small}){
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -244,26 +229,7 @@ width: auto;
 }
 
 .forecast-list{
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
-     box-shadow:${({ darkMode }) => (darkMode ? "" : "0 10px 15px rgb(0 0 0 / 20%)")};
-     background-color:${({ darkMode }) => (darkMode ? "#131214" : "#fff")};
-     color:${({ darkMode }) => (darkMode ? "#fff" : "rgba(0, 0, 0, 0.8)")};
      padding: 20px 45px;
-     border-radius: 12px;
-    }
-
-    .icon{
-        font-size: 3rem;
-        margin: 8px 0;
-    }
-
-    p {
-        font-size: 14px;
-        font-family: "Josefin Sans", sans-serif;
-        text-transform: uppercase;
     }
 }
 
@@ -281,30 +247,11 @@ width: auto;
 }
 
 .forecast-list{
-     display : flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
-     box-shadow:${({ darkMode }) => (darkMode ? "" : "0 10px 15px rgb(0 0 0 / 20%)")};
-     background-color:${({ darkMode }) => (darkMode ? "#131214" : "#fff")};
-     color:${({ darkMode }) => (darkMode ? "#fff" : "rgba(0, 0, 0, 0.8)")};
      padding: 15px 25px;
-     border-radius: 12px;
-    }
-
-    .icon{
-        font-size: 3rem;
-        margin: 8px 0;
-    }
-
-    p {
-        font-size: 14px;
-        font-family: "Josefin Sans", sans-serif;
-        text-transform: uppercase;
     }
 }
 
-    `
+`
 
 export const MainHighlights = styled.div<darkModeProps>`
 width: 100%;
@@ -421,12 +368,7 @@ border-radius: 12px;
     }
 
     @media screen and (max-width: ${breakpoints.small}){
-    margin-top: 30px;
-    /* width: 95%; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    margin-top: 0px;
     gap: 15px;
     padding: 1rem;
 .highlights-content-main{
@@ -434,26 +376,18 @@ border-radius: 12px;
     grid-template-columns: repeat(1,1fr);
     align-items: center;
     gap: 12px;
-    width: 100%;
 }
 
 .highlights-rise-set{
-    display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: row;
     align-items: center;
     width: 100%;
 }
 
 .highlights-temp{
-    display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
-}
-
-.air-content{
-    justify-content: space-around;
     width: 100%;
 }
 .air-content-section{
@@ -464,7 +398,6 @@ border-radius: 12px;
     justify-content: space-between;
     align-items:center;
     flex-direction: row;
-    width: 100%;
 }
-    }
+}
 `

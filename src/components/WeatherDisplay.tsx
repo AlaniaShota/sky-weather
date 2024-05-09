@@ -65,13 +65,13 @@ export const WeatherDisplay = ({
           <div className="humidity-level">
             <WiHumidity className="wind-icon" />
             <div className="humid-info">
-              <h1>{humidity}%</h1>
+              <h1 className="humid-title">{humidity}%</h1>
             </div>
           </div>
           <div className="wind">
             <FaWind className="wind-icon" />
             <div className="humid-info">
-              <h1>{windSpeed}km/h</h1>
+              <h1 className="humid-title">{windSpeed}km/h</h1>
             </div>
           </div>
         </div>

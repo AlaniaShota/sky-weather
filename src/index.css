@@ -4,16 +4,6 @@
   box-sizing: border-box;
 }
 
-.sky-weather {
-  width: auto;
-  /* height: 100vh; */
-  /* height: 100svh; */
-  padding-bottom: 60px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
 .dark-mode {
   background-color: #1d1c1f;
   color: #7b7980;
@@ -23,11 +13,22 @@
   background: linear-gradient(to right, #c7c7eb, #ccf2dd);
 }
 
+.sky-weather {
+  width: auto;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+
 .sky-weather-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
-  /* justify-content: space-evenly; */
-  /* align-items: flex-start; */
+  width: auto;
   text-align: center;
 }
 
@@ -37,18 +38,23 @@
   align-items: center;
   flex-direction: column;
   gap: 20px;
-  /* height: 100vh; */
-  /* height: 100svh; */
+  width: auto;
 }
 
 .loading {
   height: 100vh;
+  height: 100svh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 9999;
+}
+
+.loading-icon {
+  font-size: 3rem;
+  animation: spin 2s linear infinite;
 }
 
 .loading-icon {
@@ -87,45 +93,24 @@ p {
   rotate: 260deg;
 }
 
-@media (max-width: 440px) {
-  .sky-weather-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    width: auto;
-  }
-
-  .main-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column !important;
-    gap: 30px;
-    /* width: 100%; */
-    /* width: 100% !important; */
-    /* height: 100svh; */
-  }
-}
-
 @media (max-width: 1024px) {
-  .sky-weather-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+  .sky-weather {
     flex-direction: column;
-    text-align: center;
-    width: auto;
+    justify-content: center;
   }
 
   .main-content {
     flex-direction: column-reverse;
-    width: 100%;
   }
 }
-@media (max-width: 1024px) {
-  .sky-weather-container {
-    width: auto;
+
+@media (max-width: 430px) {
+  .sky-weather {
+    padding-bottom: 30px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .main-content {
+    flex-direction: column-reverse;
   }
 }

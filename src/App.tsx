@@ -82,12 +82,9 @@ function App() {
       <div className="dark-mode-section">
         <DarkMode darkMode={darkMode} toggle={toggleDarkMode} />
       </div>
-      <div
-        className={
-          darkMode ? "dark-mode sky-weather" : "light-mode sky-weather"
-        }
-      >
-        {weatherData !== null && !isLoading ? (
+      {/* <div className={darkMode ? "dark-mode " : "light-mode "}> */}
+      {weatherData !== null && !isLoading ? (
+        <div className="sky-weather">
           <div className="sky-weather-container">
             <WeatherDisplay
               weatherData={weatherData}
@@ -97,20 +94,21 @@ function App() {
               darkMode={darkMode}
               isLoading={isLoading}
             />
-            {weatherData && (
-              <div className="main-content">
-                <Highlights city={weatherData.name} darkMode={darkMode} />
-                <WeatherForecast city={weatherData.name} darkMode={darkMode} />
-              </div>
-            )}
           </div>
-        ) : (
-          <div className="loading">
-            <RiLoaderFill className="loading-icon" />
-            <p>Loading...</p>
-          </div>
-        )}
-      </div>
+          {weatherData && (
+            <div className="main-content">
+              <Highlights city={weatherData.name} darkMode={darkMode} />
+              <WeatherForecast city={weatherData.name} darkMode={darkMode} />
+            </div>
+          )}
+        </div>
+      ) : (
+        <div className="loading">
+          <RiLoaderFill className="loading-icon" />
+          <p>Loading...</p>
+        </div>
+      )}
+      {/* </div> */}
     </div>
   );
 }
